@@ -1,20 +1,25 @@
 #!/bin/bash
 
-# Prompt the user to enter their GitHub username
-read -p "Enter your GitHub username: " username
+while : ; do
+  read -p "Enter your GitHub username: " username
+
+  check=$(curl -s "https://api.github.com/users/$username")
+  if echo "$check" | jq -e '.message == "Not Found"' > /dev/null 2>&1; then
+    echo "Username not found. Please try again."
+    continue
+  fi
+
+  break
+done
 
 page=1
 total=0
 while : ; do
   response=$(curl -s "https://api.github.com/users/$username/repos?page=$page&per_page=100")
 
-  # Count the number of repositories in the current page
   count=$(echo "$response" | jq -r '. | length')
-
-  # Add the count to the total
   total=$((total + count))
 
-  # Check if the response is empty, indicating we've reached the last page
   if [ "$count" -eq 0 ]; then
     break
   fi
@@ -22,4 +27,10 @@ while : ; do
   ((page++))
 done
 
+last_repo=$(curl -s "https://api.github.com/users/$username/repos?sort=pushed&direction=desc&per_page=1")
+repo_name=$(echo "$last_repo" | jq -r '.[0].name')
+pushed_at=$(echo "$last_repo" | jq -r '.[0].pushed_at')
+formatted=$(date -jf "%Y-%m-%dT%H:%M:%SZ" "$pushed_at" "+%B %-d, %Y at %-I:%M %p UTC" 2>/dev/null)
+
 echo "Total repositories found: $total"
+echo "Last repo worked on: $repo_name (last pushed: $formatted)"
