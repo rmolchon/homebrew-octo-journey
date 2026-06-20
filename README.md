@@ -1,4 +1,26 @@
 # homebrew-octo-journey
+
+octo-journey is a CLI tool that counts the total number of public GitHub repositories for a given username.
+
+## Installation
+
+```
+brew tap rmolchon/octo-journey
+brew install octo-journey
+```
+
+## Usage
+
+```
+octo-journey
+```
+
+When prompted, enter a GitHub username. The tool will print "Total repositories found: N".
+
+## Dependencies
+
+`jq` (installed automatically by Homebrew)
+
 ## Updating
 
 - Make changes to the code, readme, etc. Commit and push to `main`
