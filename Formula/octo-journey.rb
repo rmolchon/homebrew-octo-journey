@@ -25,7 +25,7 @@ class HomebrewOctoJourney < Formula
 
   test do
     # this is a simple test that checks if the script is working as expected
-    system "#{bin}/octo-journey", "mvogelgesang"
+    system "#{bin}/octo-journey", "rmolchon"
 
   end
 end
