@@ -1,5 +1,5 @@
 
-class HomebrewOctoJourney < Formula
+class OctoJourney < Formula
   desc "Test for homebrew"
   homepage "https://github.com/rmolchon/homebrew-octo-journey"
   url "https://github.com/rmolchon/homebrew-octo-journey/archive/refs/tags/v0.0.2.tar.gz"
