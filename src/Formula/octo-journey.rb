@@ -1,6 +1,4 @@
-# Documentation: https://docs.brew.sh/Formula-Cookbook
-#                https://docs.brew.sh/rubydoc/Formula
-# PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
+
 class HomebrewOctoJourney < Formula
   desc "Test for homebrew"
   homepage "https://github.com/rmolchon/homebrew-octo-journey"
@@ -9,7 +7,7 @@ class HomebrewOctoJourney < Formula
   license ""
 
   # depends_on "cmake" => :build
-
+  depends_on "jq"
   # Additional dependency
   # resource "" do
   #   url ""
