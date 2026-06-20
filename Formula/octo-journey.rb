@@ -2,8 +2,8 @@
 class OctoJourney < Formula
   desc "Test for homebrew"
   homepage "https://github.com/rmolchon/homebrew-octo-journey"
-  url "https://github.com/rmolchon/homebrew-octo-journey/archive/refs/tags/v0.0.3.tar.gz"
-  sha256 "bb62bca6ed8defe6c401e8f545da0dc7f2a390f8fcaa72d90e866f7bb74821c8"
+  url "https://github.com/rmolchon/homebrew-octo-journey/archive/refs/tags/v0.0.4.tar.gz"
+  sha256 "bfaa6e2b625cc6652552ab6cfa039e56c3d06093c028eeb6705596100528cbfb"
   license ""
 
   # depends_on "cmake" => :build
