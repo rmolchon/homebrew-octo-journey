@@ -22,4 +22,4 @@ while : ; do
   ((page++))
 done
 
-echo "Total repositories: $total"
+echo "Total repositories found: $total"
